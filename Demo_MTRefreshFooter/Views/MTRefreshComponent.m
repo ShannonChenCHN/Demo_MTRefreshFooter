@@ -89,9 +89,25 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
-    if (<#condition#>) {
-        <#statements#>
+    // WHY？？？
+    if (!self.userInteractionEnabled) return;
+    
+    // 不管是否隐藏，都要处理
+    if ([keyPath isEqualToString:MTRefreshKeyPathContentSize]) {
+        [self scrollViewContentSizeDidChange:change];
+    }
+    
+    // 隐藏时不作处理, WHY?
+    if (self.hidden) return;
+    if ([keyPath isEqualToString:MTRefreshKeyPathContentOffset]) {
+        [self scrollViewContentOffsetDidChange:change];
+    } else if ([keyPath isEqualToString:MTRefreshKeyPathPanState]) {
+        [self scrollViewPanStateDidChange:change];
     }
 }
+
+- (void)scrollViewContentOffsetDidChange:(NSDictionary <NSString *, id>*)change{}
+- (void)scrollViewContentSizeDidChange:(NSDictionary <NSString *, id>*)change{}
+- (void)scrollViewPanStateDidChange:(NSDictionary <NSString *, id>*)change{}
 
 @end
