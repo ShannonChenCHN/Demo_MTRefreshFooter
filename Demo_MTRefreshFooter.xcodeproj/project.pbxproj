@@ -15,11 +15,11 @@
 		58471CD21C980E3600E3A932 /* MTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CCC1C980E3600E3A932 /* MTCollectionViewController.m */; };
 		58471CD31C980E3600E3A932 /* MTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CCE1C980E3600E3A932 /* MTSecondViewController.m */; };
 		58471CD41C980E3600E3A932 /* UIViewController+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CD01C980E3600E3A932 /* UIViewController+MTExtension.m */; };
-		58471CD71C980E7700E3A932 /* MTRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CD61C980E7700E3A932 /* MTRefreshComponent.m */; };
 		58471CDD1C980EFC00E3A932 /* UIScrollView+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CDC1C980EFC00E3A932 /* UIScrollView+MTExtension.m */; };
 		58471CE01C980F2B00E3A932 /* MTRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CDF1C980F2B00E3A932 /* MTRefreshConst.m */; };
 		58471CE31C98106300E3A932 /* UIScrollView+MTRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CE21C98106300E3A932 /* UIScrollView+MTRefresh.m */; };
 		58471CE61C98195C00E3A932 /* UIView+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CE51C98195C00E3A932 /* UIView+MTExtension.m */; };
+		58F789BA1C9908AE008CC13A /* MTRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F789B91C9908AE008CC13A /* MTRefreshFooter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,6 @@
 		58471CCE1C980E3600E3A932 /* MTSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSecondViewController.m; sourceTree = "<group>"; };
 		58471CCF1C980E3600E3A932 /* UIViewController+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MTExtension.h"; sourceTree = "<group>"; };
 		58471CD01C980E3600E3A932 /* UIViewController+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MTExtension.m"; sourceTree = "<group>"; };
-		58471CD51C980E7700E3A932 /* MTRefreshComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRefreshComponent.h; sourceTree = "<group>"; };
-		58471CD61C980E7700E3A932 /* MTRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRefreshComponent.m; sourceTree = "<group>"; };
 		58471CDB1C980EFC00E3A932 /* UIScrollView+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MTExtension.h"; sourceTree = "<group>"; };
 		58471CDC1C980EFC00E3A932 /* UIScrollView+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MTExtension.m"; sourceTree = "<group>"; };
 		58471CDE1C980F2B00E3A932 /* MTRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRefreshConst.h; sourceTree = "<group>"; };
@@ -47,6 +45,9 @@
 		58471CE21C98106300E3A932 /* UIScrollView+MTRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MTRefresh.m"; sourceTree = "<group>"; };
 		58471CE41C98195C00E3A932 /* UIView+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtension.h"; sourceTree = "<group>"; };
 		58471CE51C98195C00E3A932 /* UIView+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtension.m"; sourceTree = "<group>"; };
+		58F789B81C9908AE008CC13A /* MTRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRefreshFooter.h; sourceTree = "<group>"; };
+		58F789B91C9908AE008CC13A /* MTRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRefreshFooter.m; sourceTree = "<group>"; };
+		58F789BB1C9926E3008CC13A /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		58471CAC1C98016700E3A932 /* Demo_MTRefreshFooter */ = {
 			isa = PBXGroup;
 			children = (
+				58F789BB1C9926E3008CC13A /* Note.h */,
 				58471CB01C98016700E3A932 /* AppDelegate.h */,
 				58471CB11C98016700E3A932 /* AppDelegate.m */,
 				58471CDE1C980F2B00E3A932 /* MTRefreshConst.h */,
@@ -118,8 +120,8 @@
 		58471CD11C980E3600E3A932 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				58471CD51C980E7700E3A932 /* MTRefreshComponent.h */,
-				58471CD61C980E7700E3A932 /* MTRefreshComponent.m */,
+				58F789B81C9908AE008CC13A /* MTRefreshFooter.h */,
+				58F789B91C9908AE008CC13A /* MTRefreshFooter.m */,
 				58471CDB1C980EFC00E3A932 /* UIScrollView+MTExtension.h */,
 				58471CDC1C980EFC00E3A932 /* UIScrollView+MTExtension.m */,
 				58471CE11C98106300E3A932 /* UIScrollView+MTRefresh.h */,
@@ -205,7 +207,7 @@
 				58471CD21C980E3600E3A932 /* MTCollectionViewController.m in Sources */,
 				58471CB21C98016700E3A932 /* AppDelegate.m in Sources */,
 				58471CE01C980F2B00E3A932 /* MTRefreshConst.m in Sources */,
-				58471CD71C980E7700E3A932 /* MTRefreshComponent.m in Sources */,
+				58F789BA1C9908AE008CC13A /* MTRefreshFooter.m in Sources */,
 				58471CE31C98106300E3A932 /* UIScrollView+MTRefresh.m in Sources */,
 				58471CE61C98195C00E3A932 /* UIView+MTExtension.m in Sources */,
 				58471CD31C980E3600E3A932 /* MTSecondViewController.m in Sources */,
@@ -360,6 +362,7 @@
 				58471CC31C98016700E3A932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
