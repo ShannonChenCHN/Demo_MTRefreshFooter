@@ -8,6 +8,9 @@
 
 #import "MTRefreshConst.h"
 
+const CGFloat MTRefreshFooterHeight = 44.0;
+const CGFloat MTRefreshFastAnimationDuration = 0.25;
+
 NSString *const MTRefreshKeyPathContentOffset = @"contentOffset";
 NSString *const MTRefreshKeyPathContentInset = @"contentInset";
 NSString *const MTRefreshKeyPathContentSize = @"contentSize";

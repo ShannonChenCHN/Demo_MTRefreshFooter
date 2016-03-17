@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-const CGFloat MTRefreshFooterHeight = 44.0;
-const CGFloat MTRefreshFastAnimationDuration = 0.25;
+
+UIKIT_EXTERN const CGFloat MTRefreshFooterHeight;
+UIKIT_EXTERN const CGFloat MTRefreshFastAnimationDuration;
 
 UIKIT_EXTERN NSString *const MTRefreshKeyPathContentOffset;
 UIKIT_EXTERN NSString *const MTRefreshKeyPathContentSize;

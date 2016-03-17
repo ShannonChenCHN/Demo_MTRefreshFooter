@@ -39,6 +39,44 @@
 
 @implementation MTRefreshFooter
 
+#pragma mark - lazy initialization
+- (NSMutableDictionary *)stateTitles {
+    if (!_stateTitles) {
+        self.stateTitles = [NSMutableDictionary dictionary];
+    }
+    return _stateTitles;
+}
+
+- (UILabel *)stateLabel {
+    if (!_stateLabel) {
+        [self addSubview:_stateLabel = [UILabel label]];
+    }
+    return _stateLabel;
+}
+
+- (UIImageView *)gifView {
+    if (!_gifView) {
+        UIImageView *gifView = [[UIImageView alloc] init];
+        [self addSubview:_gifView = gifView];
+    }
+    return _gifView;
+}
+
+- (NSMutableDictionary *)stateImages {
+    if (!_stateImages) {
+        self.stateImages = [NSMutableDictionary dictionary];
+    }
+    return _stateImages;
+}
+
+- (NSMutableDictionary *)stateDurations {
+    if (!_stateDurations) {
+        self.stateDurations = [NSMutableDictionary dictionary];
+    }
+    return _stateDurations;
+}
+
+
 #pragma mark - Class methods
 + (instancetype)footerWithRefreshingHandler:(MTRefreshActionHandler)handler {
     MTRefreshFooter *footer = [[MTRefreshFooter alloc] init];
@@ -60,6 +98,14 @@
         [self setTitle:MTRefreshAutoFooterIdleText forState:MTRefreshStateIdle];
         [self setTitle:MTRefreshAutoFooterRefreshingText forState:MTRefreshStateRefreshing];
         [self setTitle:MTRefreshAutoFooterNoMoreDataText forState:MTRefreshStateNoMoreData];
+        
+        // 设置正在刷新状态的动画图片
+        NSMutableArray *refreshingImages = [NSMutableArray array];
+        for (NSUInteger i = 1; i<=3; i++) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd", i]];
+            [refreshingImages addObject:image];
+        }
+        [self setImages:refreshingImages forState:MTRefreshStateRefreshing];
     }
     return self;
 }
@@ -98,12 +144,11 @@
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
     
-    // 如果不是scrollView且不为空时，不做任何处理
-    if (newSuperview && ![newSuperview isKindOfClass:[UIScrollView class]]) return;
+    if (newSuperview && ![newSuperview isKindOfClass:[UIScrollView class]]) return; // 如果不是添加到scrollView上而是其他view，就不做任何处理
     
-    [self scrollViewRemoveObservers]; // 不管newSuperview是不是nil，都要注销观察者
+    [self scrollViewRemoveObservers]; // 不管newSuperview是不是nil，都要先注销观察者
     
-    if (newSuperview) {
+    if (newSuperview) { // 如果被添加到scrollView上
         self.mt_w = newSuperview.mt_w; // 宽度
         self.mt_x = 0;  // 原点x
         
@@ -111,9 +156,10 @@
         _scrollView = (UIScrollView *)newSuperview;
         // 记录scrollView初始的contentInset
         _scrollViewOriginalInset = _scrollView.contentInset;
+        // 永远支持垂直方向的弹簧效果，确保一直能够上拉
+        _scrollView.alwaysBounceVertical = YES;
         
         [self scrollViewAddObservers]; // 如果newSuperview不为空，就注册成为观察者
-        
     }
     
     // 调整位置
@@ -128,7 +174,7 @@
         self.mt_y = self.scrollView.mt_contentH; // 设置y位置
     } else {            // 被移除了
         if (self.hidden == NO) {
-            self.scrollView.mt_insetB -= self.mt_h; // 调整scrollView的contentInset
+            self.scrollView.mt_insetB -= self.mt_h; // 还原scrollView的contentInset
         }
     }
 }
@@ -175,7 +221,7 @@
 }
 
 - (void)scrollViewContentSizeDidChange:(NSDictionary <NSString *, id>*)change{
-    // contentSzie 变化时，调整footer位置
+    // contentSize 变化时，调整footer位置
     self.mt_y = self.scrollView.mt_contentH;
 }
 
@@ -213,16 +259,6 @@
     }
 }
 
-#pragma mark - 内部方法
-- (void)executeRefreshingCallback {
-    // 回到主队列回调
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.refreshHandler) {
-            self.refreshHandler();
-        }
-    });
-}
-
 #pragma mark - public methods
 - (void)setTitle:(NSString *)title forState:(MTRefreshState)state {
     if (title == nil) return;
@@ -258,6 +294,7 @@
     self.state = MTRefreshStateNoMoreData;
 }
 
+#pragma mark - 内部方法
 #pragma mark 是否正在刷新
 - (BOOL)isRefreshing {
     return self.state == MTRefreshStateRefreshing || self.state == MTRefreshStateWillRefresh;
@@ -284,7 +321,7 @@
     
     MTRefreshState oldState = self.state;
     if (state == oldState) return;
-    self.state = state;
+    _state = state;
     
     if (state == MTRefreshStateRefreshing) {
         // 刷新事件回调
@@ -315,41 +352,13 @@
     }
 }
 
-#pragma mark - 懒加载
-- (NSMutableDictionary *)stateTitles {
-    if (!_stateTitles) {
-        self.stateTitles = [NSMutableDictionary dictionary];
-    }
-    return _stateTitles;
-}
-
-- (UILabel *)stateLabel {
-    if (!_stateLabel) {
-        [self addSubview:_stateLabel = [UILabel label]];
-    }
-    return _stateLabel;
-}
-
-- (UIImageView *)gifView {
-    if (!_gifView) {
-        UIImageView *gifView = [[UIImageView alloc] init];
-        [self addSubview:_gifView = gifView];
-    }
-    return _gifView;
-}
-
-- (NSMutableDictionary *)stateImages {
-    if (!_stateImages) {
-        self.stateImages = [NSMutableDictionary dictionary];
-    }
-    return _stateImages;
-}
-
-- (NSMutableDictionary *)stateDurations {
-    if (!_stateDurations) {
-        self.stateDurations = [NSMutableDictionary dictionary];
-    }
-    return _stateDurations;
+- (void)executeRefreshingCallback {
+    // 回到主队列回调
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.refreshHandler) {
+            self.refreshHandler();
+        }
+    });
 }
 
 @end

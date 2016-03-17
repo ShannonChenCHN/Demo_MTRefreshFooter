@@ -44,10 +44,10 @@ static NSString *const kMTCollectionViewCellID = @"kMTCollectionViewCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+ 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-         [self performSelector:NSSelectorFromString(self.methodName) withObject:nil];
+//         [self performSelector:NSSelectorFromString(self.methodName) withObject:nil];
 #pragma clang diagnostic pop
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -70,7 +70,7 @@ static NSString *const kMTCollectionViewCellID = @"kMTCollectionViewCellID";
         });
     }];
     
-    self.collectionView.mt_footer.hidden = YES; // 默认先隐藏
+//    self.collectionView.mt_footer.hidden = YES; // 默认先隐藏
 
 }
                                      
