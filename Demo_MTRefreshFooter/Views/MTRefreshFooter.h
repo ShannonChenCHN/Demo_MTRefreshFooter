@@ -6,7 +6,6 @@
 //  Copyright © 2016年 Meitun. All rights reserved.
 //
 
-#import "UIScrollView+MTExtension.h"
 #import "UIView+MTExtension.h"
 #import "MTRefreshConst.h"
 

@@ -15,7 +15,6 @@
 		58471CD21C980E3600E3A932 /* MTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CCC1C980E3600E3A932 /* MTCollectionViewController.m */; };
 		58471CD31C980E3600E3A932 /* MTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CCE1C980E3600E3A932 /* MTSecondViewController.m */; };
 		58471CD41C980E3600E3A932 /* UIViewController+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CD01C980E3600E3A932 /* UIViewController+MTExtension.m */; };
-		58471CDD1C980EFC00E3A932 /* UIScrollView+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CDC1C980EFC00E3A932 /* UIScrollView+MTExtension.m */; };
 		58471CE01C980F2B00E3A932 /* MTRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CDF1C980F2B00E3A932 /* MTRefreshConst.m */; };
 		58471CE31C98106300E3A932 /* UIScrollView+MTRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CE21C98106300E3A932 /* UIScrollView+MTRefresh.m */; };
 		58471CE61C98195C00E3A932 /* UIView+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CE51C98195C00E3A932 /* UIView+MTExtension.m */; };
@@ -37,8 +36,6 @@
 		58471CCE1C980E3600E3A932 /* MTSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSecondViewController.m; sourceTree = "<group>"; };
 		58471CCF1C980E3600E3A932 /* UIViewController+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MTExtension.h"; sourceTree = "<group>"; };
 		58471CD01C980E3600E3A932 /* UIViewController+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MTExtension.m"; sourceTree = "<group>"; };
-		58471CDB1C980EFC00E3A932 /* UIScrollView+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MTExtension.h"; sourceTree = "<group>"; };
-		58471CDC1C980EFC00E3A932 /* UIScrollView+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MTExtension.m"; sourceTree = "<group>"; };
 		58471CDE1C980F2B00E3A932 /* MTRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRefreshConst.h; sourceTree = "<group>"; };
 		58471CDF1C980F2B00E3A932 /* MTRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRefreshConst.m; sourceTree = "<group>"; };
 		58471CE11C98106300E3A932 /* UIScrollView+MTRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MTRefresh.h"; sourceTree = "<group>"; };
@@ -122,8 +119,6 @@
 			children = (
 				58F789B81C9908AE008CC13A /* MTRefreshFooter.h */,
 				58F789B91C9908AE008CC13A /* MTRefreshFooter.m */,
-				58471CDB1C980EFC00E3A932 /* UIScrollView+MTExtension.h */,
-				58471CDC1C980EFC00E3A932 /* UIScrollView+MTExtension.m */,
 				58471CE11C98106300E3A932 /* UIScrollView+MTRefresh.h */,
 				58471CE21C98106300E3A932 /* UIScrollView+MTRefresh.m */,
 				58471CE41C98195C00E3A932 /* UIView+MTExtension.h */,
@@ -212,7 +207,6 @@
 				58471CE61C98195C00E3A932 /* UIView+MTExtension.m in Sources */,
 				58471CD31C980E3600E3A932 /* MTSecondViewController.m in Sources */,
 				58471CAF1C98016700E3A932 /* main.m in Sources */,
-				58471CDD1C980EFC00E3A932 /* UIScrollView+MTExtension.m in Sources */,
 				58471CD41C980E3600E3A932 /* UIViewController+MTExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

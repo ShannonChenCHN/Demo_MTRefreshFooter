@@ -7,6 +7,7 @@
 //
 
 #import "MTRefreshFooter.h"
+#import "UIScrollView+MTRefresh.h"
 
 @implementation UILabel(MTRefresh)
 
