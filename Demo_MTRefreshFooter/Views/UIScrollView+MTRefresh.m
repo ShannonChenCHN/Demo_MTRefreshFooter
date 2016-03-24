@@ -97,6 +97,29 @@
 
 @implementation UIScrollView (MTRefresh)
 
+#pragma mark - header
+static const char MTRefreshHeaderKey = '\0';
+- (void)setMt_header:(MTRefreshFooter *)mt_header
+{
+    if (mt_header != self.mt_header) {
+        // 删除旧的，添加新的
+        [self.mt_header removeFromSuperview];
+        [self insertSubview:mt_header atIndex:0];  // 放在最底层
+        
+        // 存储新的
+        [self willChangeValueForKey:@"mt_header"]; // KVO
+        objc_setAssociatedObject(self, &MTRefreshHeaderKey,
+                                 mt_header, OBJC_ASSOCIATION_ASSIGN);
+        [self didChangeValueForKey:@"mt_header"]; // KVO
+    }
+}
+
+- (MTRefreshFooter *)mt_header
+{
+    return objc_getAssociatedObject(self, &MTRefreshHeaderKey);
+}
+
+#pragma mark - footer
 static const char MTRefreshFooterKey = '\0';
 - (void)setMt_footer:(MTRefreshFooter *)mt_footer
 {

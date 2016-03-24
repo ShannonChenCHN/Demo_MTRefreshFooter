@@ -18,6 +18,7 @@
 		58471CE01C980F2B00E3A932 /* MTRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CDF1C980F2B00E3A932 /* MTRefreshConst.m */; };
 		58471CE31C98106300E3A932 /* UIScrollView+MTRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CE21C98106300E3A932 /* UIScrollView+MTRefresh.m */; };
 		58471CE61C98195C00E3A932 /* UIView+MTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 58471CE51C98195C00E3A932 /* UIView+MTExtension.m */; };
+		58731D881CA42DD70072F222 /* MTRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58731D871CA42DD70072F222 /* MTRefreshHeader.m */; };
 		58F789BA1C9908AE008CC13A /* MTRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F789B91C9908AE008CC13A /* MTRefreshFooter.m */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		58471CE21C98106300E3A932 /* UIScrollView+MTRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MTRefresh.m"; sourceTree = "<group>"; };
 		58471CE41C98195C00E3A932 /* UIView+MTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MTExtension.h"; sourceTree = "<group>"; };
 		58471CE51C98195C00E3A932 /* UIView+MTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MTExtension.m"; sourceTree = "<group>"; };
+		58731D861CA42DD70072F222 /* MTRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRefreshHeader.h; sourceTree = "<group>"; };
+		58731D871CA42DD70072F222 /* MTRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRefreshHeader.m; sourceTree = "<group>"; };
 		58F789B81C9908AE008CC13A /* MTRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRefreshFooter.h; sourceTree = "<group>"; };
 		58F789B91C9908AE008CC13A /* MTRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRefreshFooter.m; sourceTree = "<group>"; };
 		58F789BB1C9926E3008CC13A /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 		58471CD11C980E3600E3A932 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				58731D861CA42DD70072F222 /* MTRefreshHeader.h */,
+				58731D871CA42DD70072F222 /* MTRefreshHeader.m */,
 				58F789B81C9908AE008CC13A /* MTRefreshFooter.h */,
 				58F789B91C9908AE008CC13A /* MTRefreshFooter.m */,
 				58471CE11C98106300E3A932 /* UIScrollView+MTRefresh.h */,
@@ -204,6 +209,7 @@
 				58471CE01C980F2B00E3A932 /* MTRefreshConst.m in Sources */,
 				58F789BA1C9908AE008CC13A /* MTRefreshFooter.m in Sources */,
 				58471CE31C98106300E3A932 /* UIScrollView+MTRefresh.m in Sources */,
+				58731D881CA42DD70072F222 /* MTRefreshHeader.m in Sources */,
 				58471CE61C98195C00E3A932 /* UIView+MTExtension.m in Sources */,
 				58471CD31C980E3600E3A932 /* MTSecondViewController.m in Sources */,
 				58471CAF1C98016700E3A932 /* main.m in Sources */,

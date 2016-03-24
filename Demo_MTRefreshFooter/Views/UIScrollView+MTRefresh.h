@@ -7,6 +7,7 @@
 //
 
 #import "MTRefreshFooter.h"
+#import "MTRefreshHeader.h"
 
 @interface UIScrollView (MTExtension)
 
@@ -27,6 +28,8 @@
 //___________________________________________________________________________________________________
 
 @interface UIScrollView (MTRefresh)
+
+@property (nonatomic, strong) MTRefreshHeader *mt_header;
 
 @property (nonatomic, strong) MTRefreshFooter *mt_footer; ///< accessory view below content, which is used to showing the loading state when pull up. default is nil.
 

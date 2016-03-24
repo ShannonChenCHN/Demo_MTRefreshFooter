@@ -10,7 +10,6 @@
 #import "UIViewController+MTExtension.h"
 #import "MTSecondViewController.h"
 #import "UIScrollView+MTRefresh.h"
-#import "MTRefreshFooter.h"
 
 // 随机色
 #define MTRandomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
@@ -54,6 +53,21 @@ static NSString *const kMTCollectionViewCellID = @"kMTCollectionViewCellID";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kMTCollectionViewCellID];
 
     __unsafe_unretained __typeof(self) weakSelf = self;
+    self.collectionView.mt_header = [MTRefreshHeader headerWithRefreshingHandler:^{
+        // 增加5条假数据
+        for (int i = 0; i<10; i++) {
+            [weakSelf.colors insertObject:MTRandomColor atIndex:0];
+        }
+        
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MTDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.collectionView reloadData];
+            
+            // 结束刷新
+            [weakSelf.collectionView.mt_header finishRefreshing];
+        });
+    }];
+    
     self.collectionView.mt_footer = [MTRefreshFooter footerWithRefreshingHandler:^{
        
         // 增加5条假数据

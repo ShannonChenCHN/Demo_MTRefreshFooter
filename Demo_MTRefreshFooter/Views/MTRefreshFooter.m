@@ -31,7 +31,7 @@
 
 @property (strong, nonatomic) NSMutableDictionary <NSNumber *, NSString *>*stateTitles; ///< 所有状态对应的文字
 @property (nonatomic, weak) UILabel *stateLabel;
-@property (nonatomic, weak) UIImageView *gifView;;
+@property (nonatomic, weak) UIImageView *gifView;
 
 @property (strong, nonatomic) NSMutableDictionary <NSNumber *,NSArray <UIImage *>*>*stateImages; ///< 所有状态对应的动画图片
 @property (strong, nonatomic) NSMutableDictionary <NSNumber *, NSNumber *>*stateDurations; ///< 所有状态对应的动画时间

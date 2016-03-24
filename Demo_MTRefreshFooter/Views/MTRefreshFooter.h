@@ -9,14 +9,7 @@
 #import "UIView+MTExtension.h"
 #import "MTRefreshConst.h"
 
-/** 刷新控件的状态 */
-typedef NS_ENUM(NSInteger, MTRefreshState) {
-    MTRefreshStateIdle = 1,     ///<  普通闲置状态
-    MTRefreshStatePulling,      ///< 松开就可以进行刷新的状态
-    MTRefreshStateRefreshing,   ///< 正在刷新中的状态
-    MTRefreshStateWillRefresh,  ///< 即将刷新的状态
-    MTRefreshStateNoMoreData    ///< 所有数据加载完毕，没有更多的数据了
-};
+
 
 typedef void (^MTRefreshActionHandler)(); // 刷新回调block
 
